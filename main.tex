@@ -1,0 +1,59 @@
+%%
+%% 研究報告用スイッチ
+%% [techrep]
+%%
+%% 欧文表記無しのスイッチ(etitle,eabstractは任意)
+%% [noauthor]
+%%
+
+%\documentclass[submit,techrep]{ipsj}
+\documentclass[submit,techrep,noauthor]{ipsj}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{latexsym}
+\usepackage{comment}
+\usepackage{here}
+\usepackage{cite}
+\usepackage{url}
+
+
+
+
+\def\Underline{\setbox0\hbox\bgroup\let\\\endUnderline}
+\def\endUnderline{\vphantom{y}\egroup\smash{\underline{\box0}}\\}
+\def\|{\verb|}
+%
+
+%\setcounter{巻数}{59}%vol59=2018
+%\setcounter{号数}{10}
+%\setcounter{page}{1}
+
+
+\begin{document}
+
+\title{ヒュージページを活用する\\インメモリ分散処理フレームワーク}
+%\etitle{An in-memory distributed processing framework that utilizes hugepage}
+
+\affiliate{tuat}{東京農工大学\\
+Tokyo University of Agriculture and Technology}
+
+\author{宮里 勇也}{Yuya Miyazato}{tuat}
+\author{山田 浩史}{Hiroshi Yamada}{tuat}
+
+
+\input{contents/00_abstract.tex}
+
+\maketitle
+
+\input{contents/01_introduction.tex}
+\input{contents/02_background.tex}
+\input{contents/03_proposal.tex}
+\input{contents/04_design.tex}
+\input{contents/05_implementation.tex}
+\input{contents/06_evaluation.tex}
+\input{contents/07_conclusion.tex}
+
+\bibliographystyle{ipsjunsrt}
+\bibliography{references}
+
+
+\end{document}

@@ -1,0 +1,63 @@
+This is pBibTeX, Version 0.99d-j0.33 (TeX Live 2021/W32TeX)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: ipsjunsrt.bst
+Database file #1: references.bib
+Warning--Missing required argument author in amazon-ec2-high-memory
+Warning--Missing required argument author in java-thp
+Warning--Missing required argument author in page-table-management
+Warning--Missing required argument author in intel-manual
+Warning--Missing required argument author in document-hugetlbpage
+Warning--Missing required argument author in document-thp
+Warning--Missing required argument author in hadoop
+Warning--Missing required argument author in hive
+Warning--Missing required argument author in tez
+Warning--Missing required argument author in dag
+Warning--Missing required argument author in jni
+Warning--Missing required argument author in madvise
+Warning--Missing required argument author in spark-memory-management
+Warning--Missing required argument author in open-jdk
+Warning--Missing required argument author in perf
+You've used 30 entries,
+            2334 wiz_defined-function locations,
+            697 strings with 9344 characters,
+and the built_in function-call counts, 7868 in all, are:
+= -- 590
+> -- 288
+< -- 14
++ -- 116
+- -- 86
+* -- 580
+:= -- 969
+add.period$ -- 30
+call.type$ -- 30
+change.case$ -- 1
+chr.to.int$ -- 0
+cite$ -- 45
+duplicate$ -- 500
+empty$ -- 701
+format.name$ -- 172
+if$ -- 1925
+int.to.chr$ -- 0
+int.to.str$ -- 30
+missing$ -- 14
+newline$ -- 93
+num.names$ -- 15
+pop$ -- 155
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 349
+stack$ -- 0
+substring$ -- 373
+swap$ -- 122
+text.length$ -- 14
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 15
+while$ -- 55
+width$ -- 32
+write$ -- 244
+is.kanji.str$ -- 309
+(There were 15 warnings)

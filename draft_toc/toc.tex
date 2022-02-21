@@ -1,0 +1,271 @@
+\documentclass[10.5ptj,a4j]{ltjsarticle}
+%
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{ascmac}
+\usepackage{url}
+\usepackage{listings}
+
+\usepackage[no-math]{fontspec}
+\usepackage{unicode-math}
+\unimathsetup{math-style=ISO,bold-style=ISO}
+
+\setmathfont{TeX Gyre Pagella Math}
+%\setmainfont[Ligatures=TeX, Scale=0.95]{TeX Gyre Termes}
+\setmainfont[Ligatures=TeX, Scale=0.95]{TeX Gyre Pagella}
+\setsansfont[Ligatures=TeX, Scale=0.95]{TeX Gyre Heros}
+\setmonofont[Ligatures=TeX, Scale=1]{TeX Gyre Cursor}
+
+\renewcommand{\bfdefault}{bx}
+\renewcommand{\headfont}{\gtfamily\sffamily\bfseries}
+
+\usepackage{luacode}
+\usepackage{luatexja-otf}
+
+%\usepackage[morisawa-pr6n,deluxe,jis2004]{luatexja-preset}
+\usepackage[hiragino-pron,deluxe,jis2004]{luatexja-preset}
+
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\usepackage[utf8x]{luainputenc}
+
+\def\OSv{OS\raise.5ex\hbox{v}}
+
+%
+\renewcommand{\lstlistingname}{ソースコード}
+\lstset{%
+  basicstyle=\ttfamily\footnotesize,
+  commentstyle=\textit,
+  classoffset=1,
+  keywordstyle=\bfseries,
+  frame=tRBl,
+  framesep=5pt,
+  showstringspaces=false,
+  numbers=left,
+  stepnumber=1,
+  numberstyle=\footnotesize,
+  tabsize=4
+}
+%
+% paper setting
+%\usepackage[
+%    headsep=4truemm,
+%    top=19truemm,
+%    left=22.2truemm,
+%    right=19truemm,
+%    bottom=23truemm,
+%    footskip=5.5truemm,
+%    textwidth=45\zw,
+%    textheight=40\Cvs,
+%]{geometry}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage[
+    topmargin=-12truemm,
+    headheight=5truemm,
+    headsep=3truemm,
+    textheight=230mm,
+]{geometry}
+
+\title{2021年OS研　目次案}
+\author{井口 卓海}
+\date{\today}
+
+\begin{document}
+\maketitle
+%
+% 目次の表示
+\tableofcontents
+
+\newpage
+\section{はじめに}
+\begin{itemize}\tightlist{}
+  \item メモリはページテーブルなどの重要なデータ構造を配置しており，メモリにおける故障の発生はOSにとって致命的な影響を及ぼす
+  \begin{itemize}\tightlist{}
+    \item メモリエラーにより，kernel panicなどのシステムを停止・再起動しなければならない状況になる
+    \item メモリエラーにはbit反転のようなソフトエラー，物理メモリの破損のようなハードエラーがある
+    \item メモリ故障の修正機能を持つECCのようなメモリも存在するが，修正できるのはソフトエラーのみ
+  \end{itemize}
+
+  \item ヘテロジニアスメモリシステムを導入することにより，データの重要度に応じた配置でメモリエラーへの耐性を向上させる
+  \begin{itemize}\tightlist{}
+    \item ヘテロジニアスメモリシステムとは，性質の異なるメモリを組み合わせて構築するメモリシステムのこと
+    \begin{itemize}\tightlist{}
+      \item メモリの性質とは，エラー耐性のような信頼性，データI/O速度のような性能，消費電力等が挙げられ，メモリの種類により一長一短
+    \end{itemize}
+    \item ハードウェアの領域ではDRAMとECCのような信頼性の異なるメモリを組み合わせてメモリシステムを構築可能
+  \end{itemize}
+
+  \item 既存OSはデータの重要度に応じたデータ配置をせず，ヘテロジニアスメモリに対応できない
+  \begin{itemize}\tightlist{}
+    \item 高信頼メモリは容量が少ない傾向にあり，どのデータを高信頼メモリに置くべきか選別する必要がある
+    \begin{itemize}\tightlist{}
+      \item データの重要度・破損時の回復可能性・破損時のシステム全体への影響を鑑みることが考えられる
+    \end{itemize}
+    \item 既存OSは単一の物理メモリで構成されているという前提のもとデータを配置しており，データ・メモリの性質に応じた配置をしていない
+    \item ヘテロジニアスメモリシステムを導入しても，データを狙い通りに配置することができない
+  \end{itemize}
+
+  \item メモリエラーに対して耐性を持つOSを提案する
+  \begin{itemize}\tightlist{}
+    \item メモリ側で修正不可能なエラーを検知しても，システム全体のダウンを回避して動作継続を可能にする
+    \item ECCのようなメモリにおいて修正できないメモリエラーを検知した場合，エラー箇所に応じたリカバリハンドラによる回復を実施し，局所的なメモリ破損を抱えた状態でも即座のシステムダウンに繋げず動作を継続させる
+    \item メモリ上に置かれ，役割ごとにデータを管理するメモリオブジェクトの単位でリカバリハンドラを呼び出し，無事なデータの退避，破損箇所に対応するデータの初期化，整合性の保持を行う
+  \end{itemize}
+
+  \item 本論文での貢献
+  \begin{itemize}\tightlist{}
+    \item ECCのような高信頼メモリでも修正不能なメモリエラーに対して耐性を持つOSを提案した．
+          OS自体にメモリエラーの耐性を持たせることで，メモリと合わせてさらなる可用性の向上と，低信頼性のメモリを使用した場合においてもメモリエラーによる悪影響を軽減できると考えられる(3章)．
+    \item 提案手法を実現するため，OSのデータをメモリオブジェクトの単位でデータのセマンティクス・使用される状況・データ構造間の関係性・回復可能性を明らかにし，設計を行った．
+	  故障が発覚したアドレスが渡されるという仮定の下，アドレスから故障したメモリオブジェクトを探索，合致したリカバリハンドラを呼び出すように実装した(4章)．
+    \item MITの開発した小規模な教育用OSであるxv6に対して実装を行った．
+	  想定したクラッシュシナリオ上において，システム全体がダウンすることなく継続して動作することを確認した(5，6章)．
+  \end{itemize}
+\end{itemize}
+
+
+\section{背景}
+
+\subsection{メモリエラー}
+\begin{itemize}\tightlist{}
+  \begin{itemize}\tightlist{}
+    \item ビット反転によるメモリエラー
+    \item 物理的破損によるメモリエラー
+    \item 実環境におけるメモリエラーの発生状況
+  \end{itemize}
+  \item メモリの種類
+    \begin{itemize}\tightlist{}
+      \item DRAM，ECC等
+      \item ビット反転の修復方法
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\subsection{ヘテロジニアスメモリシステム}
+\begin{itemize}\tightlist{}
+  \item ホモジニアスメモリとヘテロジニアスメモリ
+  \item HWにおけるヘテロジニアスメモリの扱い
+\end{itemize}
+
+
+\subsection{関連研究}
+\begin{itemize}\tightlist{}
+  \item{メモリエラー耐性の指標と分析}
+  \begin{itemize}\tightlist{}
+    \item Characterizing Application Memory Error Vulnerability
+  \end{itemize}
+  \item{性能向上を目的としたヘテロジニアスメモリの利用}
+  \begin{itemize}\tightlist{}
+    \item HeteroVisor
+    \item HeteroOS
+    \item KLOCs
+  \end{itemize}
+\end{itemize}
+
+\subsection{問題点}
+\begin{itemize}\tightlist{}
+  \item これらはサーバ向けであり，OSを対象としていない
+  \item OS自体がヘテロジニアスな構成を認識しておらず，VMを介さない一般的なコンピュータの場合にはヘテロジニアスな恩恵を享受できない
+\end{itemize}
+
+
+\section{提案}
+\begin{itemize}\tightlist{}
+  \item{提案}
+  \begin{itemize}\tightlist{}
+    \item 本研究では，メモリ側で修正不可能なメモリエラーが発生した際に，リカバリを実施することでシステム全体のダウンを回避し，継続動作を可能にするOSを提案する
+  \end{itemize}
+
+  \item{想定する状況}
+  \begin{itemize}\tightlist{}
+    \item メモリエラーが発覚した箇所のアドレスは，そのメモリにアクセスした時点で割り込みによりOS側に知らされる
+    \begin{itemize}\tightlist{}
+      \item ECCメモリを使用する想定
+    \end{itemize}
+    \item メモリエラーはメモリオブジェクト単位で１つのみ発覚し，破損したメモリオブジェク卜はその全メンバが使えない
+    \begin{itemize}\tightlist{}
+      \item メンバに破損したメモリオブジェクトを持つ場合は除く
+    \end{itemize}
+  \end{itemize}
+
+  \item{アプローチ}
+  \begin{itemize}\tightlist{}
+    \item メモリオブジェクトのアドレスをまとめたリストを事前に用意し，破損が発覚したらリストを引いて破損したメモリオブジェクトを特定
+    \item メモリオブジェクトのセマンティクス・使用状況・他メモリオブジェクトとの関連に応じたリカバリハンドラにより復旧を試みる
+  \end{itemize}
+
+  \item{デザインチャレンジ}
+  \begin{itemize}\tightlist{}
+    \item どうやって破損が検知された箇所のアドレスから対応するメモリオブジェクトを特定するか
+    \item リカバリをどのように実施するのか
+  \end{itemize}
+\end{itemize}
+
+
+\section{設計}
+\subsection{アドレスリスト}
+\begin{itemize}\tightlist{}
+  \item アドレスリストの作成
+  \begin{itemize}\tightlist{}
+    \item アドレスリスト専用の構造体を用意し，メモリオブジェクト生成時等のタイミングで先頭アドレスを登録
+    \item メモリオブジェクトによってはアドレスリストが準備できた段階で登録
+    \item メモリオブジェクトがfree等で使われなくなった際にはリストから削除
+  \end{itemize}
+\end{itemize}
+
+\subsection{アドレスリスト探索・ハンドラ仲介関数}
+\begin{itemize}\tightlist{}
+  \item 仲介関数においてメモリから受け取ったアドレスでリストを探索し，破損したオブジェクトを特定
+  \item 特定したオブジェクトをリカバリするためのハンドラを呼び出して回復を試みる
+\end{itemize}
+
+\subsection{リカバリハンドラ}
+\begin{itemize}\tightlist{}
+  \item 受け取ったアドレスからアドレスリストによって破損箇所を特定
+  \item 新たに領域を割り当て，破損したメモリオブジェクトの代替物を用意して無事なデータを移動
+  \item 破損したメモリオブジェクトに関連するその他のデータとの整合性を保持
+\end{itemize}
+
+
+\section{実装}
+\subsection{アドレスリストの作成}
+\begin{itemize}\tightlist{}
+  \item 空きページを管理するオブジェクトのような，数が非常に多いオブジェクトは１ページ内にノードを複数埋める
+  \item メモリオブジェクトの登録だけでなく，削除・再登録に対応
+\end{itemize}
+
+\subsection{アドレスリスト走査・ハンドラ仲介関数}
+\begin{itemize}\tightlist{}
+\item メモリオブジェクトの種類によっては，他のリカバリハンドラが動かせない状況になるため，リストを探索する順序を調整
+\item マルチプロセスを使用している際等，二重にリカバリハンドラを呼び出す場合に対処
+\end{itemize}
+
+\subsection{リカバリハンドラ}
+\begin{itemize}\tightlist{}
+\item 各メモリオブジェクトのリカバリハンドラについて記述 or 工夫を凝らしたものやわかりやすいものについてのみ記述
+\end{itemize}
+
+\section{実験}
+\subsection{目的}
+\subsection{実験環境}
+\subsection{クラッシュシナリオ}
+\subsubsection{クラッシュシナリオ1}
+\subsubsection{クラッシュシナリオ19}
+\subsection{クラッシュシナリオ(マルチプロセス)}
+\subsubsection{クラッシュシナリオ1}
+
+
+\section{おわりに}
+\begin{itemize}\tightlist{}
+  \item まとめ
+  \item 課題
+  \begin{itemize}\tightlist{}
+    \item ページテーブルへの対応について
+  \end{itemize}
+\end{itemize}
+%
+%
+\end{document}

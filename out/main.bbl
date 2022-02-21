@@ -1,0 +1,154 @@
+\begin{thebibliography}{10}
+
+\bibitem{zaharia2010spark}
+Zaharia, M., Chowdhury, M., Franklin, M.~J., Shenker, S., Stoica, I. et al.:
+  Spark: Cluster computing with working sets., {\em HotCloud},  Vol.~10,
+  No.~10-10, p.~95 (2010).
+
+\bibitem{dean2008mapreduce}
+Dean, J. and Ghemawat, S.: MapReduce: simplified data processing on large
+  clusters, {\em Communications of the ACM},  Vol.~51, No.~1, pp.\ 107--113
+  (2008).
+
+\bibitem{amazon-ec2-high-memory}
+: Amazon EC2 High Memory Instance, (online),
+  \urle{https://aws.amazon.com/jp/ec2/instance-types/high-memory/}
+  \refdatee{2021-1-10}.
+
+\bibitem{basu2013efficient}
+Basu, A., Gandhi, J., Chang, J., Hill, M.~D. and Swift, M.~M.: Efficient
+  virtual memory for big memory servers, {\em ACM SIGARCH Computer Architecture
+  News},  Vol.~41, No.~3, pp.\ 237--248 (2013).
+
+\bibitem{gandhi2014efficient}
+Gandhi, J., Basu, A., Hill, M.~D. and Swift, M.~M.: Efficient memory
+  virtualization: Reducing dimensionality of nested page walks, {\em 2014 47th
+  Annual IEEE/ACM International Symposium on Microarchitecture}, IEEE, pp.\
+  178--189 (2014).
+
+\bibitem{java-thp}
+: TransParent Huge Pages, (online),
+  \urle{https://shipilev.net/jvm/anatomy-quarks/2-transparent-huge-pages/}
+  \refdatee{2021-2-20}.
+
+\bibitem{page-table-management}
+: Linux Page Table Management, (online),
+  \urle{https://www.kernel.org/doc/gorman/html/understand/\\understand006.html}
+  \refdatee{2021-2-20}.
+
+\bibitem{intel-manual}
+: Intel 64 and IA-32 Architectures Software Developers Manual, (online),
+  \urle{https://www.intel.co.jp/content/www/jp/ja/architecture-and-technology/64-ia-32-architectures-software-developer-system-programming-manual-325384.html}
+  \refdatee{2021-2-20}.
+
+\bibitem{document-hugetlbpage}
+: Hugetlbpage Support, (online),
+  \urle{https://www.kernel.org/doc/Documentation/vm/\\hugetlbpage.txt}
+  \refdatee{2021-1-27}.
+
+\bibitem{document-thp}
+: Transparent Hugepage Support, (online),
+  \urle{https://www.kernel.org/doc/Documentation/vm/\\transhuge.txt}
+  \refdatee{2021-1-27}.
+
+\bibitem{hadoop}
+: Apache Hadoop, (online), \urle{https://hadoop.apache.org/}
+  \refdatee{2021-1-27}.
+
+\bibitem{hive}
+: Apache Hive, (online), \urle{https://hive.apache.org/} \refdatee{2021-2-20}.
+
+\bibitem{tez}
+: Apache Tez, (online), \urle{https://tez.apache.org/} \refdatee{2021-2-20}.
+
+\bibitem{zaharia2012resilient}
+Zaharia, M., Chowdhury, M., Das, T., Dave, A., Ma, J., McCauly, M., Franklin,
+  M.~J., Shenker, S. and Stoica, I.: Resilient distributed datasets: A
+  fault-tolerant abstraction for in-memory cluster computing, {\em Presented as
+  part of the 9th $\{$USENIX$\}$ Symposium on Networked Systems Design and
+  Implementation ($\{$NSDI$\}$ 12)}, pp.\ 15--28 (2012).
+
+\bibitem{dag}
+: An Introduction to Directed Acyclic Graphs, (online),
+  \urle{https://cran.r-project.org/web/packages/ggdag/vignettes/intro-to-dags.html}
+  \refdatee{2021-2-20}.
+
+\bibitem{jni}
+: Java Native Interface, (online),
+  \urle{https://docs.oracle.com/javase/jp/1.5.0/guide/jni/spec/\\jniTOC.html}
+  \refdatee{2021-1-27}.
+
+\bibitem{madvise}
+: MAN Page of MADVISE, (online),
+  \urle{https://linuxjm.osdn.jp/html/LDP\_man-pages/man2/madvise.2.html}
+  \refdatee{2021-1-27}.
+
+\bibitem{spark-memory-management}
+: Spark Memory Management, (online),
+  \urle{https://0x0fff.com/spark-memory-management/} \refdatee{2021-2-20}.
+
+\bibitem{open-jdk}
+: OpenJDK, (online), \urle{https://openjdk.java.net/} \refdatee{2021-2-20}.
+
+\bibitem{detlefs2004garbage}
+Detlefs, D., Flood, C., Heller, S. and Printezis, T.: Garbage-first garbage
+  collection, {\em Proceedings of the 4th international symposium on Memory
+  management}, pp.\ 37--48 (2004).
+
+\bibitem{perf}
+: Perf, (online), \urle{https://perf.wiki.kernel.org/index.php/Main\_Page}
+  \refdatee{2021-1-27}.
+
+\bibitem{vavilapalli2013apache}
+Vavilapalli, V.~K., Murthy, A.~C., Douglas, C., Agarwal, S., Konar, M., Evans,
+  R., Graves, T., Lowe, J., Shah, H., Seth, S. et al.: Apache hadoop yarn: Yet
+  another resource negotiator, {\em Proceedings of the 4th annual Symposium on
+  Cloud Computing}, pp.\ 1--16 (2013).
+
+\bibitem{lion2016don}
+Lion, D., Chiu, A., Sun, H., Zhuang, X., Grcevski, N. and Yuan, D.: Don’t get
+  caught in the cold, warm-up your $\{$JVM$\}$: Understand and eliminate
+  $\{$JVM$\}$ warm-up overhead in data-parallel systems，{\em 12th
+  $\{$USENIX$\}$ Symposium on Operating Systems Design and Implementation
+  ($\{$OSDI$\}$ 16)}, pp.\ 383--400 (2016).
+
+\bibitem{shvachko2010hadoop}
+Shvachko, K., Kuang, H., Radia, S. and Chansler, R.: The hadoop distributed
+  file system, {\em 2010 IEEE 26th symposium on mass storage systems and
+  technologies (MSST)}, Ieee, pp.\ 1--10 (2010).
+
+\bibitem{armbrust2015spark}
+Armbrust, M., Xin, R.~S., Lian, C., Huai, Y., Liu, D., Bradley, J.~K., Meng,
+  X., Kaftan, T., Franklin, M.~J., Ghodsi, A. et al.: Spark sql: Relational
+  data processing in spark, {\em Proceedings of the 2015 ACM SIGMOD
+  international conference on management of data}, pp.\ 1383--1394 (2015).
+
+\bibitem{nguyen2016yak}
+Nguyen, K., Fang, L., Xu, G., Demsky, B., Lu, S., Alamian, S. and Mutlu, O.:
+  Yak: A high-performance big-data-friendly garbage collector, {\em 12th
+  $\{$USENIX$\}$ Symposium on Operating Systems Design and Implementation
+  ($\{$OSDI$\}$ 16)}, pp.\ 349--365 (2016).
+
+\bibitem{zhang2018riffle}
+Zhang, H., Cho, B., Seyfe, E., Ching, A. and Freedman, M.~J.: Riffle: optimized
+  shuffle service for large-scale data analytics, {\em Proceedings of the
+  Thirteenth EuroSys Conference}, pp.\ 1--15 (2018).
+
+\bibitem{kwon2016coordinated}
+Kwon, Y., Yu, H., Peter, S., Rossbach, C.~J. and Witchel, E.: Coordinated and
+  efficient huge page management with ingens, {\em 12th $\{$USENIX$\}$
+  Symposium on Operating Systems Design and Implementation ($\{$OSDI$\}$ 16)},
+  pp.\ 705--721 (2016).
+
+\bibitem{panwar2018making}
+Panwar, A., Prasad, A. and Gopinath, K.: Making huge pages actually useful,
+  {\em Proceedings of the Twenty-Third International Conference on
+  Architectural Support for Programming Languages and Operating Systems}, pp.\
+  679--692 (2018).
+
+\bibitem{page1999pagerank}
+Page, L., Brin, S., Motwani, R. and Winograd, T.: The PageRank citation
+  ranking: Bringing order to the web., Technical report, Stanford InfoLab
+  (1999).
+
+\end{thebibliography}
