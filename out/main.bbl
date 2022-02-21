@@ -65,8 +65,8 @@ Gandhi, J., Basu, A., Hill, M.~D. and Swift, M.~M.: Efficient memory
 Zaharia, M., Chowdhury, M., Das, T., Dave, A., Ma, J., McCauly, M., Franklin,
   M.~J., Shenker, S. and Stoica, I.: Resilient distributed datasets: A
   fault-tolerant abstraction for in-memory cluster computing, {\em Presented as
-  part of the 9th $\{$USENIX$\}$ Symposium on Networked Systems Design and
-  Implementation ($\{$NSDI$\}$ 12)}, pp.\ 15--28 (2012).
+  part of the 9th USENIX Symposium on Networked Systems Design and
+  Implementation (NSDI 12)}, pp.\ 15--28 (2012).
 
 \bibitem{dag}
 : An Introduction to Directed Acyclic Graphs, (online),
@@ -107,10 +107,9 @@ Vavilapalli, V.~K., Murthy, A.~C., Douglas, C., Agarwal, S., Konar, M., Evans,
 
 \bibitem{lion2016don}
 Lion, D., Chiu, A., Sun, H., Zhuang, X., Grcevski, N. and Yuan, D.: Don’t get
-  caught in the cold, warm-up your $\{$JVM$\}$: Understand and eliminate
-  $\{$JVM$\}$ warm-up overhead in data-parallel systems，{\em 12th
-  $\{$USENIX$\}$ Symposium on Operating Systems Design and Implementation
-  ($\{$OSDI$\}$ 16)}, pp.\ 383--400 (2016).
+  caught in the cold, warm-up your VM: Understand and eliminate JVM warm-up
+  overhead in data-parallel systems，{\em 12th USENIX Symposium on Operating
+  Systems Design and Implementation (OSDI 16)}, pp.\ 383--400 (2016).
 
 \bibitem{shvachko2010hadoop}
 Shvachko, K., Kuang, H., Radia, S. and Chansler, R.: The hadoop distributed
@@ -125,9 +124,9 @@ Armbrust, M., Xin, R.~S., Lian, C., Huai, Y., Liu, D., Bradley, J.~K., Meng,
 
 \bibitem{nguyen2016yak}
 Nguyen, K., Fang, L., Xu, G., Demsky, B., Lu, S., Alamian, S. and Mutlu, O.:
-  Yak: A high-performance big-data-friendly garbage collector, {\em 12th
-  $\{$USENIX$\}$ Symposium on Operating Systems Design and Implementation
-  ($\{$OSDI$\}$ 16)}, pp.\ 349--365 (2016).
+  Yak: A high-performance big-data-friendly garbage collector, {\em 12th USENIX
+  Symposium on Operating Systems Design and Implementation (OSDI 16)}, pp.\
+  349--365 (2016).
 
 \bibitem{zhang2018riffle}
 Zhang, H., Cho, B., Seyfe, E., Ching, A. and Freedman, M.~J.: Riffle: optimized
@@ -136,9 +135,8 @@ Zhang, H., Cho, B., Seyfe, E., Ching, A. and Freedman, M.~J.: Riffle: optimized
 
 \bibitem{kwon2016coordinated}
 Kwon, Y., Yu, H., Peter, S., Rossbach, C.~J. and Witchel, E.: Coordinated and
-  efficient huge page management with ingens, {\em 12th $\{$USENIX$\}$
-  Symposium on Operating Systems Design and Implementation ($\{$OSDI$\}$ 16)},
-  pp.\ 705--721 (2016).
+  efficient huge page management with ingens, {\em 12th USENIX Symposium on
+  Operating Systems Design and Implementation (OSDI16)}, pp.\ 705--721 (2016).
 
 \bibitem{panwar2018making}
 Panwar, A., Prasad, A. and Gopinath, K.: Making huge pages actually useful,

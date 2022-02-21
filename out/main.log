@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2021.7.28)  20 FEB 2022 23:06
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2021.7.28)  21 FEB 2022 10:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3317,17 +3317,17 @@ LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 111.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
-(Font)              No change on input line 117.
+(Font)              No change on input line 116.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
-(Font)              No change on input line 123.
+(Font)              No change on input line 122.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
-(Font)              No change on input line 128.
+(Font)              No change on input line 127.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
-(Font)              No change on input line 134.
+(Font)              No change on input line 133.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
-(Font)              No change on input line 139.
+(Font)              No change on input line 138.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
-(Font)              No change on input line 145.
+(Font)              No change on input line 143.
 ) [8] (out/main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -3336,10 +3336,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  2296 strings out of 479005
  35686 string characters out of 5865968
- 351906 words of memory out of 5000000
+ 350906 words of memory out of 5000000
  20405 multiletter control sequences out of 15000+600000
  431467 words of font info for 151 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  57i,10n,66p,370b,551s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on out/main.dvi (8 pages, 72372 bytes).
+Output written on out/main.dvi (8 pages, 72292 bytes).

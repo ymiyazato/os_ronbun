@@ -20,7 +20,7 @@ Warning--Missing required argument author in open-jdk
 Warning--Missing required argument author in perf
 You've used 30 entries,
             2334 wiz_defined-function locations,
-            697 strings with 9344 characters,
+            698 strings with 9372 characters,
 and the built_in function-call counts, 7868 in all, are:
 = -- 590
 > -- 288
